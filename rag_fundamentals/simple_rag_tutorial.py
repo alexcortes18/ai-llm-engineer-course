@@ -15,9 +15,9 @@ class EmbeddingModel:
     def __init__(self, model_type="openai"):
         self.model_type = model_type
         if model_type == "openai":
-            self.client = OpenAI(api_key)
+            self.client = OpenAI(api_key=api_key)
             self.embedding_fn = embedding_functions.OpenAIEmbedding(
-                api_key,
+                api_key=api_key,
                 model_name="text-embedding-3-small",
             )
         elif model_type == "chroma":
